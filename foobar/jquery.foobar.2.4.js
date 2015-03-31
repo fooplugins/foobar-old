@@ -779,7 +779,7 @@
           /// <summary>loads the rss feeds content and appends it to the messages array</summary>
           var url = fb.settings.rss.url;
           url = url.indexOf('?') != -1 ? url + '&_=' + new Date().getTime() : url + '?_=' + new Date().getTime();
-          var feed = new google.feeds.Feed(fb.settings.rss.url);
+          var feed = new google.feeds.Feed(url);
           feed.setNumEntries(fb.settings.rss.maxResults);
           feed.load(function(result) {
             fb.messageLoop.stop();
